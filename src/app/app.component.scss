@@ -1,0 +1,15 @@
+.app {
+  &__covid{
+    &:not(:last-child){
+      margin-bottom:10px;
+    }
+  }
+
+  &__new-country{
+    &.disabled{
+      border-color: red;
+      outline-color: red;
+      border-radius: 3px;
+    }
+  }
+}

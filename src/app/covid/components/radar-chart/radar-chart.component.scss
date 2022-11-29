@@ -1,0 +1,11 @@
+.app {
+  &__radar{
+    display: block;
+    border: 1px solid #cccccc;
+    padding: 50px 500px;
+  }
+  &__radar-chart {
+    max-width: 800px;
+    max-height: 800px;
+  }
+}

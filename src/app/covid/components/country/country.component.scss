@@ -1,0 +1,15 @@
+:host{
+  border: 0.5rem dashed #ccc;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+}
+.country{
+  &__name {
+    cursor: pointer;
+  }
+
+  &.custom-country{
+    font-size: 32px;
+  }
+}

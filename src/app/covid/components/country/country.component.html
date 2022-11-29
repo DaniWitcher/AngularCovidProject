@@ -1,0 +1,18 @@
+<div class="country"
+     [title]="country.name"
+>
+  <ng-template #notCustomTemplate>
+    !ngif
+  </ng-template>
+
+  <ng-content></ng-content>
+  <input type="text" [(ngModel)]="country.name" (ngModelChange)="onCountryChanged()">
+  <div class="country__name" appColorGreen>
+    <p>{{country.name}}</p>
+  </div>
+
+  <div *ngTemplateOutlet="content"></div>
+
+  <div (click)="onCountryRemove()">x</div>
+</div>
+
