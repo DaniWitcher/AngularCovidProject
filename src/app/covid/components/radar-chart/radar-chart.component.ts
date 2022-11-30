@@ -11,8 +11,8 @@ import {Statistics} from "../../models/statistics";
 })
 export class RadarChartComponent implements OnChanges{
 
-  @Input()  public cStat : Statistics[];
-  @Input()  public sStat : Statistics[];
+  @Input()  public cStat : Statistics;
+  @Input()  public sStat : Statistics;
 
   // Radar
   public radarChartOptions: ChartConfiguration<'radar'>['options'] = {
@@ -30,24 +30,24 @@ export class RadarChartComponent implements OnChanges{
         labels: this.radarChartLabels,
         datasets: [
           { data: [
-            this.cStat[0].newCases%100,
-            this.cStat[0].totalCases%100,
-            this.cStat[0].active%100,
-            this.cStat[0].recovered%100,
-            this.cStat[0].deaths%100,
-            this.cStat[0].tests%100
+            this.cStat.newCases%100,
+            this.cStat.totalCases%100,
+            this.cStat.active%100,
+            this.cStat.recovered%100,
+            this.cStat.deaths%100,
+            this.cStat.tests%100
             ],
-            label: this.cStat[0].name
+            label: this.cStat.name
           },
           { data: [
-            this.sStat[0].newCases%100,
-            this.sStat[0].totalCases%100,
-            this.sStat[0].active%100,
-            this.sStat[0].recovered%100,
-            this.sStat[0].deaths%100,
-            this.sStat[0].tests%100
+            this.sStat.newCases%100,
+            this.sStat.totalCases%100,
+            this.sStat.active%100,
+            this.sStat.recovered%100,
+            this.sStat.deaths%100,
+            this.sStat.tests%100
             ],
-            label: this.sStat[0].name
+            label: this.sStat.name
           }
         ]
       };

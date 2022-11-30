@@ -1,0 +1,42 @@
+.app{
+  &__header{
+    display: flex;
+    flex-direction:row ;
+    background-color: rgb(184, 241, 189);
+    height: 150px;
+    padding: 10px;
+    align-items: center;
+    border: 1px solid rgb(23, 211, 16);
+
+    &__img{
+      max-width: 100px;
+      max-height: 100px;
+      margin-right: 10px;
+      margin-left: 450px;
+    }
+
+    &__vl{
+      border-left: 3px solid rgb(6, 17, 184);
+      height: 100px;
+      margin-right: 10px;
+    }
+
+    &__main-text{
+      color: rgb(8, 1, 1);
+      width: 150px;
+      font-weight: bold;
+      margin-right: 300px;
+    }
+
+    &__link{
+      color: rgb(6, 17, 184);
+      font-weight: bold;
+      margin-right: 35px;
+    }
+  }
+}
+
+a:hover{
+  color: rgb(153, 106, 149);
+  transition: 0.7s;
+}

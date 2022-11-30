@@ -1,6 +1,5 @@
 export interface Statistics {
-  name?: string 
-  population : number,
+  name?: string ,
   tests : number,
   totalCases : number,
   active : number,

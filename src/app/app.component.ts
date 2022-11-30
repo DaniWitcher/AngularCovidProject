@@ -6,7 +6,6 @@ import {
   OnInit,
 } from '@angular/core';
 import { Country } from './covid/models/country';
-import { CountriesService } from './covid/services/countries/countries.service';
 import { delay, Subject, takeUntil } from 'rxjs';
 import { StatisticsService } from './covid/services/statistics/statistics.service';
 import { Statistics } from './covid/models/statistics';
@@ -18,46 +17,40 @@ import { Statistics } from './covid/models/statistics';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit, OnDestroy {
+  public isLoaded = false;
   private destroy$: Subject<void> = new Subject<void>();
   public countries: Country[] = [];
   public firstCountry: string = 'FirstCountry';
   public secondCountry: string = 'SecondCountry';
-  public countryStat: Statistics[] =[{
+  public countryStat: Statistics = {
     name: 'FirstCountry',
-    population : 0,
     tests : 0,
     totalCases : 0,
     active : 0,
     recovered : 0,
     deaths : 0,
     newCases : 0
-  }];
+  };
 
-  public secondCountryStat: Statistics[] =[{
+  public secondCountryStat: Statistics = {
     name: 'SecondCountry',
-    population : 0,
     tests : 0,
     totalCases : 0,
     active : 0,
     recovered : 0,
     deaths : 0,
     newCases : 0
-  }];
+  };
+
+  public allCountriesStat: Statistics[] =[];
 
   constructor(
-    private countriesService: CountriesService,
     private changeDetectionRef: ChangeDetectorRef,
     private staticService: StatisticsService
   ) {}
 
-  ngOnInit(): void {
-    this.countriesService
-      .getCountries()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((countries) => {
-        this.countries = countries;
-        this.changeDetectionRef.markForCheck();
-      });
+  ngOnInit(): void {   
+      this.getAllCountriesStat();
   }
 
   ngOnDestroy(): void {
@@ -65,32 +58,35 @@ export class AppComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  getCountryStat() {
+  getAllCountriesStat(){
     this.staticService
-      .getStatistics(this.firstCountry)
+      .getStatistics()
       .pipe(takeUntil(this.destroy$))
       .subscribe((stat) => {
-        this.countryStat = stat;
-        this.countryStat[0].name = this.firstCountry;
-        this.changeDetectionRef.markForCheck();
-      });
+        this.allCountriesStat = stat;
+        this.countries = stat.map(this.getCountry)
+      });   
   }
 
-  getSecondCountryStat() {
-    this.staticService
-      .getStatistics(this.secondCountry)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((stat) => {
-        this.secondCountryStat = stat;
-        this.secondCountryStat[0].name = this.secondCountry;
-        this.changeDetectionRef.markForCheck();
-      });
+  getCountry(item : any){
+    return {
+      name: item.name
+    }
   }
 
-  showCountryStat() {
-    console.log('Wait please, scanning data');
+  getCountryStat(countryName : String, isFirst: boolean){
+    if(isFirst){
+      this.countryStat = this.allCountriesStat.filter((c) => c.name == countryName)[0];
+    }else{
+      this.secondCountryStat = this.allCountriesStat.filter((c) => c.name == countryName)[0];
+    }
+      this.changeDetectionRef.markForCheck();
+  }
+
+  loadingTimeout(){
     setTimeout(() => {
-      console.log(this.countryStat);
-    }, 5000);
+      this.isLoaded = true;
+      this.changeDetectionRef.markForCheck();
+    },1000);
   }
 }

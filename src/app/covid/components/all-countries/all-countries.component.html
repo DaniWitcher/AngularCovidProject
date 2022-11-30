@@ -1,0 +1,10 @@
+<div class="app__all-countries">
+    <div class="app__all-countries__main-text">
+        <span class="color-red">Cases</span> | Deaths by Country
+    </div>
+    <div class="app__all-countries__hl"></div>
+    <div class="app__all-countries__country" *ngFor="let country of countriesStat">
+        {{country.name}}<br>
+        <span class="color-red">{{country.totalCases}}</span> | {{country.deaths}}
+    </div>
+</div>

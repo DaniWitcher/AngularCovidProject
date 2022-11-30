@@ -12,28 +12,28 @@ export class StatisticsService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getStatistics(countryName:string): Observable<Statistics[]> {
+  public getStatistics(): Observable<Statistics[]> {
     const httpHeaders: HttpHeaders = new HttpHeaders({
       'X-RapidAPI-Key': '6507f434e3mshb802c99a200b5bbp16ae32jsn69c628e1f5c3',
-      'X-RapidAPI-Host': 'covid-193.p.rapidapi.com',
+      'X-RapidAPI-Host': 'corona-virus-world-and-india-data.p.rapidapi.com',
     });
 
     return this.httpClient
-      .get<Statistics[]>('https://covid-193.p.rapidapi.com/statistics?country=' + countryName, {
+      .get<Statistics[]>('https://corona-virus-world-and-india-data.p.rapidapi.com/api', {
         headers: httpHeaders,
       })
       .pipe(
         map((json: any) => {
-          return (json.response)
+          return (json.countries_stat)
           .map((countryJson: any) => {
             return {
-              population: countryJson.population,
-              tests: countryJson.tests.total,
-              totalCases: countryJson.cases.total,
-              active: countryJson.cases.active,
-              recovered: countryJson.cases.recovered,
-              deaths: countryJson.deaths.total,
-              newCases: Number((countryJson.cases.new))
+              name : countryJson.country_name,
+              tests: Number((countryJson.total_tests).split(',').join('')),
+              totalCases: Number(countryJson.cases.split(',').join('')),
+              active: Number(countryJson.active_cases.split(',').join('')),
+              recovered: Number(countryJson.total_recovered.split(',').join('')),
+              deaths: Number(countryJson.deaths.split(',').join('')),
+              newCases: Number((countryJson.new_cases).split(',').join(''))
             };
          });
         })

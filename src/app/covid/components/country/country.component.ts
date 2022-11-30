@@ -11,7 +11,6 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Country } from '../../models/country';
-import { CountriesService } from '../../services/countries/countries.service';
 
 @Component({
   selector: 'app-country',

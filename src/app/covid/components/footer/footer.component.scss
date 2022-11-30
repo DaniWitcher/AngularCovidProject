@@ -1,0 +1,55 @@
+.app {
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(184, 241, 189);
+    border: 1px solid rgb(23, 211, 16);
+
+    &__logo {
+      display: flex;
+      flex-direction: row;
+      height: 60px;
+      margin-top: 20px;
+    }
+
+    &__img {
+      max-width: 50px;
+      max-height: 50px;
+      margin-right: 10px;
+      margin-left: 250px;
+    }
+
+    &__vl {
+      border-left: 3px solid rgb(6, 17, 184);
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    &__main-text {
+      color: rgb(8, 1, 1);
+      width: 100px;
+      font-weight: bold;
+      margin-right: 300px;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    &__hl{
+        border-top: 2px solid rgb(6, 17, 184);
+        margin-left: 250px;
+        margin-bottom: 10px;
+        margin-right: 250px;
+    }
+
+    &__copyright{
+        margin-left: 250px;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+  }
+}
+
+a:hover {
+  color: yellow;
+  transition: 0.7s;
+}
