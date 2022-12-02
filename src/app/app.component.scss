@@ -1,41 +1,13 @@
 .app {
-
   background-color: rgb(186, 218, 231);
-
   &__covid{
     &:not(:last-child){
       margin-bottom:10px;
     }
   }
 
-  &__new-country{
-    &.disabled{
-      border-color: red;
-      outline-color: red;
-      border-radius: 3px;
-    }
-  }
-
   &__loader{
     margin-left : 900px;
     margin-top : 400px;
-  }
-
-  &__content{
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    margin: 0;
-    height: 675px;
-  }
-
-  &__chart{
-    background-color: rgb(184, 241, 189);
-    margin-top: 19px;
-    margin-left: 50px;
-    padding-left: 25px;
-    padding-right: 25px;
-    height: 637px;
-    border: 1px solid rgb(23, 211, 16);
   }
 }

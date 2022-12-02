@@ -1,37 +1,6 @@
 <div class="app" *ngIf="isLoaded; else loader">
   <app-header></app-header>
-  <div class="app__content">
-    <app-all-countries [countriesStat]="allCountriesStat"></app-all-countries>
-
-    <div class="app__chart">
-      <select
-        class="app__select"
-        [(ngModel)]="firstCountry"
-        (change)="getCountryStat(firstCountry, true)"
-      >
-        <option>Select the country</option>
-        <option *ngFor="let country of countries">
-          {{ country.name }}
-        </option>
-      </select>
-
-      <select
-        class="app__select"
-        [(ngModel)]="secondCountry"
-        (change)="getCountryStat(secondCountry, false)"
-      >
-        <option>Select the country</option>
-        <option *ngFor="let country of countries">
-          {{ country.name }}
-        </option>
-      </select>
-      <app-radar-chart
-        [cStat]="countryStat"
-        [sStat]="secondCountryStat"
-      ></app-radar-chart>
-    </div>
-  </div>
-
+  <app-content></app-content>
   <app-footer></app-footer>
 </div>
 

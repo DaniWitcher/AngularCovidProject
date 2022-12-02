@@ -1,0 +1,17 @@
+<div class="app__side-panel">
+    <div class="app__side-panel__total-info">
+        <div class="app__side-panel__total-info__info-bar">
+            <p class="app__side-panel__total-info__info-bar__text">Total Cases</p>
+            <p class="app__side-panel__total-info__info-bar__number">{{worldStat.totalCases}}</p>
+        </div>
+        <div class="app__side-panel__total-info__info-bar">
+            <p class="app__side-panel__total-info__info-bar__text">Total Deaths</p>
+            <p class="app__side-panel__total-info__info-bar__number">{{worldStat.totalDeaths}}</p>
+        </div>
+    </div>
+
+    <div class="app__side-panel__bar-chart">
+        <app-bar-chart [countriesStat]="countriesStat"></app-bar-chart>
+    </div>
+    
+</div>

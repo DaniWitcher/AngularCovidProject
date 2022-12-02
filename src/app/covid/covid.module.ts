@@ -8,6 +8,10 @@ import {StatisticsService} from "./services/statistics/statistics.service";
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AllCountriesComponent } from './components/all-countries/all-countries.component';
+import { SidePanelComponent } from './components/side-panel/side-panel.component';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { ContentComponent } from './components/content/content.component';
+import { CountriesArrayService } from './services/countries-array.service';
 
 @NgModule({
   declarations: [
@@ -16,14 +20,20 @@ import { AllCountriesComponent } from './components/all-countries/all-countries.
     HeaderComponent,
     FooterComponent,
     AllCountriesComponent,
+    SidePanelComponent,
+    BarChartComponent,
+    ContentComponent,
   ],
   exports: [
     RadarChartComponent,
     HeaderComponent,
     FooterComponent,
-    AllCountriesComponent
+    AllCountriesComponent,
+    SidePanelComponent,
+    BarChartComponent,
+    ContentComponent
   ],
-  providers :[StatisticsService],
+  providers :[StatisticsService,CountriesArrayService],
   imports: [
         CommonModule,
         NgChartsModule,

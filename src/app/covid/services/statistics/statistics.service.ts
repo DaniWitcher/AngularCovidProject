@@ -3,12 +3,13 @@ import {BehaviorSubject, map, Observable} from "rxjs";
 import {Country} from "../../models/country";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Statistics} from "../../models/statistics";
+import { WholeStat } from '../../models/wholeStat';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StatisticsService {
-  public statistics$: BehaviorSubject<Statistics[]> = new BehaviorSubject<Statistics[]>([]);
+  //public statistics$: BehaviorSubject<Statistics[]> = new BehaviorSubject<Statistics[]>([]);
 
   constructor(private httpClient: HttpClient) {}
 
@@ -36,6 +37,26 @@ export class StatisticsService {
               newCases: Number((countryJson.new_cases).split(',').join(''))
             };
          });
+        })
+      );
+  }
+
+  public getWholeStat(): Observable<WholeStat>{
+    const httpHeaders: HttpHeaders = new HttpHeaders({
+      'X-RapidAPI-Key': '6507f434e3mshb802c99a200b5bbp16ae32jsn69c628e1f5c3',
+      'X-RapidAPI-Host': 'covid-19-statistics.p.rapidapi.com',
+    });
+
+    return this.httpClient
+      .get<WholeStat>('https://covid-19-statistics.p.rapidapi.com/reports/total?date=2022-01-01', {
+        headers: httpHeaders,
+      })
+      .pipe(
+        map((json: any) => {
+          return {
+            totalCases: json.data.confirmed,
+            totalDeaths: json.data.deaths
+          }
         })
       );
   }

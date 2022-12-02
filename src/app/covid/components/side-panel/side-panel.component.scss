@@ -1,0 +1,60 @@
+.app{
+    &__side-panel{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(184, 241, 189);
+    margin-top: 19px;
+    margin-left: 68px;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 637px;
+    width: 700px;
+    border: 1px solid rgb(23, 211, 16);
+
+    &__total-info{
+        display: flex;
+        flex-direction: row;
+        height: 250px;
+        width: 650px;
+        margin-top: 10px;
+
+        &__info-bar{
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(168, 228, 173);
+            border: 1px solid rgb(23, 211, 16);
+            height: 150px;
+            width: 270px;
+            margin-left: 35px;
+            margin-top: 40px;
+
+            &__text{
+                display: block;
+                font-weight: bold;
+                font-size: 25px;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                letter-spacing: 1px;
+            }
+
+            &__number{
+                display: block;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 10px;
+                font-size: 40px;
+                color: rgb(170, 73, 73);
+            }
+        }
+    }
+
+    &__bar-chart{
+        background-color: rgb(168, 228, 173);
+        margin-left: 30px;
+        width: 600px;
+        margin-bottom: 10px;
+        border: 1px solid rgb(23, 211, 16);
+    }
+    }
+}

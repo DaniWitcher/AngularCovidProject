@@ -30,11 +30,12 @@
             border: 1px dashed rgb(23, 211, 16);
             display: block;
             width: 150px;
+            cursor: pointer;
         }
     }
 }
 
 .color-red{
-    color:red;
+    color:rgb(170, 73, 73);
     font-weight: bold;
-}
+} 

@@ -17,7 +17,6 @@ import { Country } from '../../models/country';
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CountryComponent implements OnInit {
   @Input()

@@ -3,7 +3,11 @@
         <span class="color-red">Cases</span> | Deaths by Country
     </div>
     <div class="app__all-countries__hl"></div>
-    <div class="app__all-countries__country" *ngFor="let country of countriesStat">
+    <div 
+    class="app__all-countries__country" 
+    *ngFor="let country of countriesStat"
+    (click)="sendCountryStat(country)"
+    >
         {{country.name}}<br>
         <span class="color-red">{{country.totalCases}}</span> | {{country.deaths}}
     </div>

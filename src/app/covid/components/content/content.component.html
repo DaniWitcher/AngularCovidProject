@@ -1,0 +1,21 @@
+<div class="app__content">
+  <app-all-countries [countriesStat]="allCountriesStat"></app-all-countries>
+
+  <div class="app__chart">
+    <app-radar-chart
+      [stats]="showCountriesStat"
+    ></app-radar-chart>
+
+    <div class="app__countries">
+      <div
+        class="app__countries__country"
+        *ngFor="let country of showCountriesStat"
+        (click)="deleteCountryStat(country)"
+      >
+      <span class="app__countries__country__name">{{ country.name }}</span>
+      </div>
+    </div>
+  </div>
+
+  <app-side-panel [countriesStat]="allCountriesStat"></app-side-panel>
+</div>
