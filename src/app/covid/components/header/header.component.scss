@@ -33,11 +33,13 @@
       color: rgb(6, 17, 184);
       font-weight: bold;
       margin-right: 35px;
+      font-size: 25px;
+      margin-right: 55px;
+      letter-spacing: 2px;
     }
   }
 }
 
-a:hover{
-  color: rgb(153, 106, 149);
-  transition: 0.7s;
+.active{
+  color: black;
 }

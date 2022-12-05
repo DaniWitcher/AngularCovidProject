@@ -12,6 +12,10 @@ import { SidePanelComponent } from './components/side-panel/side-panel.component
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { ContentComponent } from './components/content/content.component';
 import { CountriesArrayService } from './services/countries-array.service';
+import { AboutComponent } from './components/about/about.component';
+import { TipsComponent } from './components/tips/tips.component';
+import { AppRoutingModule } from '../app-routing.module';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,9 @@ import { CountriesArrayService } from './services/countries-array.service';
     SidePanelComponent,
     BarChartComponent,
     ContentComponent,
+    AboutComponent,
+    TipsComponent,
+    CarouselComponent,
   ],
   exports: [
     RadarChartComponent,
@@ -38,6 +45,7 @@ import { CountriesArrayService } from './services/countries-array.service';
         CommonModule,
         NgChartsModule,
         FormsModule,
+        AppRoutingModule,
     ]
 })
 export class CovidModule { }

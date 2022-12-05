@@ -1,8 +1,24 @@
 <div class="app__header">
-    <img class="app__header__img" src="./assets/cr1.svg" alt="No">
-    <div class="app__header__vl"></div>
-    <div class="app__header__main-text">CORONAVIRUS RESOURCE CENTER</div>
-    <a href="#" class="app__header__link">Home</a>
-    <a href="#" class="app__header__link">Countries Сompare</a>
-    <a href="#" class="app__header__link">About</a>
+  <img class="app__header__img" src="./assets/cr1.svg" alt="No" />
+  <div class="app__header__vl"></div>
+  <div class="app__header__main-text">CORONAVIRUS RESOURCE CENTER</div>
+  <a
+    [routerLink]="['/']"
+    class="app__header__link"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Home</a
+  >
+  <a
+    [routerLink]="['/about']"
+    class="app__header__link"
+    routerLinkActive="active"
+    >About</a
+  >
+  <a
+    [routerLink]="['/tips']"
+    class="app__header__link"
+    routerLinkActive="active"
+    >Tips</a
+  >
 </div>

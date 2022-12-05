@@ -6,6 +6,7 @@ import { NgChartsModule } from 'ng2-charts';
 import {CovidModule} from "./covid/covid.module";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import {HttpClientModule} from "@angular/common/http";
         FormsModule,
         HttpClientModule,
         CovidModule,
+        AppRoutingModule
     ]
 })
 export class AppModule { }
