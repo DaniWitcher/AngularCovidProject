@@ -1,5 +1,7 @@
 .app {
-  background-color: rgb(186, 218, 231);
+  background-image: url("../assets/back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   &__covid{
     &:not(:last-child){
       margin-bottom:10px;

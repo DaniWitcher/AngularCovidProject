@@ -37,69 +37,58 @@ export class RadarChartComponent implements OnChanges {
   ];
   public radarChartData: ChartData<'radar'> = {
     labels: this.radarChartLabels,
-    datasets: [
-      {
-        data: [],
-        label: '',
-      },
-      {
-        data: [],
-        label: '',
-      },
-      {
-        data: [],
-        label: '',
-      },
-      {
-        data: [],
-        label: '',
-      },
-      {
-        data: [],
-        label: '',
-      },
-      {
-        data: [],
-        label: '',
-      },
-      {
-        data: [],
-        label: '',
-      },
-      {
-        data: [],
-        label: '',
-      },
-      {
-        data: [],
-        label: '',
-      },
-      {
-        data: [],
-        label: '',
-      },
-    ],
+    datasets: [],
   };
   public radarChartType: ChartConfiguration<'radar'>['type'] = 'radar';
 
   constructor() {
     setInterval(() => {
-      for (let i = 0; i < this.stats.length; i++) {
-        this.radarChartData.datasets[i].data = [
-          this.stats[i].newCases % 100,
-          this.stats[i].totalCases % 100,
-          this.stats[i].active % 100,
-          this.stats[i].recovered % 100,
-          this.stats[i].deaths % 100,
-          this.stats[i].tests % 100,
-        ];
-        this.radarChartData.datasets[i].label = this.stats[i].name;
-      }
+      if (this.stats.length > this.radarChartData.datasets.length) {
+        for (let i = 0; i < this.radarChartData.datasets.length; i++) {
+          this.radarChartData.datasets[i].data = [
+            this.stats[i].newCases % 100,
+            this.stats[i].totalCases % 100,
+            this.stats[i].active % 100,
+            this.stats[i].recovered % 100,
+            this.stats[i].deaths % 100,
+            this.stats[i].tests % 100,
+          ];
+          this.radarChartData.datasets[i].label = this.stats[i].name;
+        }
 
-      for (let i = this.stats.length; i < 10; i++) {
-        this.radarChartData.datasets[i].data = [
-        ];
-        this.radarChartData.datasets[i].label = '';
+        for (
+          let i = this.radarChartData.datasets.length;
+          i < this.stats.length;
+          i++
+        ) {
+          this.radarChartData.datasets.push({
+            data: [
+              this.stats[i].newCases % 100,
+              this.stats[i].totalCases % 100,
+              this.stats[i].active % 100,
+              this.stats[i].recovered % 100,
+              this.stats[i].deaths % 100,
+              this.stats[i].tests % 100,
+            ],
+            label: this.stats[i].name,
+          });
+        }
+      } else {
+        for (let i = 0; i < this.stats.length; i++) {
+          this.radarChartData.datasets[i].data = [
+            this.stats[i].newCases % 100,
+            this.stats[i].totalCases % 100,
+            this.stats[i].active % 100,
+            this.stats[i].recovered % 100,
+            this.stats[i].deaths % 100,
+            this.stats[i].tests % 100,
+          ];
+          this.radarChartData.datasets[i].label = this.stats[i].name;
+        }
+
+        for(let i = this.stats.length; i < this.radarChartData.datasets.length; i++){
+          this.radarChartData.datasets.pop();
+        }
       }
       this.chart?.update();
     }, 1000);

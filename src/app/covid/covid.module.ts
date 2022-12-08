@@ -16,6 +16,7 @@ import { AboutComponent } from './components/about/about.component';
 import { TipsComponent } from './components/tips/tips.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { CarouselModule } from '@coreui/angular';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
         NgChartsModule,
         FormsModule,
         AppRoutingModule,
+        CarouselModule
     ]
 })
 export class CovidModule { }

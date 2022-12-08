@@ -1,0 +1,17 @@
+.app__carousel{
+    margin-top: 120px;
+    width: 500px;
+    height: 500px;
+}
+
+.tips{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__image{
+        height: 655px;
+        width: 500px;
+        margin: 10px 50px;
+    }
+}
