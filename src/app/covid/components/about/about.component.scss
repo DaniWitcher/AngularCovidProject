@@ -1,0 +1,42 @@
+.app__about {
+  height: 675px;
+  display: flex;
+  flex-direction: row;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    height: 624px;
+    width: 600px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 30px;
+
+    &__inside {
+      height: 190px;
+      width: 500px;
+      margin-left: 50px;
+      margin-top: 13px;
+      border: 1px solid rgb(23, 211, 16);
+      background-color: rgb(227, 236, 212);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 20px;
+      font-weight: bold;
+      
+
+      &__text {
+        font-size: 20px;
+        text-align: center;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.did-you-know {
+  font-size: 50px;
+  letter-spacing: 3px;
+  display: block;
+}

@@ -1,43 +1,54 @@
-.app{
-    &__content{
-        display: flex;
-        flex-direction: row;
-        padding: 0;
-        margin: 0;
-        height: 675px;
-      }
-    
-      &__chart{
-        display: flex;
-        flex-direction: row;
-        background-color: rgb(227, 236, 212);
-        margin-top: 19px;
-        margin-left: 50px;
-        padding-left: 25px;
-        padding-right: 0;
-        height: 637px;
-        width: 850px;
-        border: 1px solid rgb(23, 211, 16);
-      }
+.app {
+  &__content {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    height: 675px;
+  }
 
-      &__countries{
-        margin-top: 150px;
-        height: 335px;
-        width: 200px;
-        border: 1px solid rgb(23, 211, 16);
+  &__chart {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(227, 236, 212);
+    margin-top: 19px;
+    margin-left: 50px;
+    padding-left: 25px;
+    padding-right: 0;
+    height: 637px;
+    width: 850px;
+    border: 1px solid rgb(23, 211, 16);
+  }
 
-        &__country{
-            justify-content: space-around;
-            margin-top: 5px;
-            margin-left: 25px;
-            border: 1px dashed rgb(23, 211, 16);
-            display: flex;
-            width: 150px;
-            cursor: pointer;
+  &__countries {
+    margin-top: 150px;
+    height: 335px;
+    width: 200px;
+    border: 1px solid rgb(23, 211, 16);
 
-            &__name{
-                display: block;
-            }
-        }
+    &__country {
+      justify-content: space-around;
+      margin-top: 5px;
+      margin-left: 25px;
+      border: 1px dashed rgb(23, 211, 16);
+      display: flex;
+      width: 150px;
+      cursor: pointer;
+
+      &__name {
+        display: block;
       }
+    }
+  }
+}
+
+.enterSmth {
+  margin-top: 25px;
+  margin-right: 0px;
+  height: 550px;
+  width: 550px;
+  padding: 180px 50px;
+  text-align: center;
+  font-size: 60px;
+  letter-spacing: 2px;
 }

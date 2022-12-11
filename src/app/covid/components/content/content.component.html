@@ -2,8 +2,9 @@
   <app-all-countries [countriesStat]="allCountriesStat"></app-all-countries>
 
   <div class="app__chart">
-    <app-radar-chart
+    <app-radar-chart *ngIf="showCountriesStat.length !== 0; else enterSmth"
       [stats]="showCountriesStat"
+      [allStats]="allCountriesStat"
     ></app-radar-chart>
 
     <div class="app__countries">
@@ -19,3 +20,9 @@
 
   <app-side-panel [countriesStat]="allCountriesStat"></app-side-panel>
 </div>
+
+<ng-template #enterSmth>
+  <div class="enterSmth">
+    <span class="enterSmth__text">Select at least one country</span>
+  </div>
+</ng-template>

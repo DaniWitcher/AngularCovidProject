@@ -7,6 +7,7 @@ import {CovidModule} from "./covid/covid.module";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
+import { NoopAnimationPlayer } from '@angular/animations';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
         FormsModule,
         HttpClientModule,
         CovidModule,
-        AppRoutingModule
+        AppRoutingModule,
     ]
 })
 export class AppModule { }
