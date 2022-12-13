@@ -52,3 +52,88 @@
   font-size: 60px;
   letter-spacing: 2px;
 }
+
+@media only screen and (max-width: 1819px) {
+  .app__chart {
+    margin-left: 5px;
+  }
+
+  .app__content {
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (max-width: 1288px) {
+  .app__content {
+    flex-direction: column;
+    height: 950px;
+    align-items: center;
+    justify-content: space-around;
+
+    .app__chart {
+      margin-top: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .app {
+    &__content {
+      height: 800px;
+    }
+
+    &__chart {
+      width: 540px;
+      height: 350px;
+    }
+
+    &__countries {
+      margin-top: 7px;
+    }
+  }
+
+  .enterSmth {
+    height: 300px;
+    width: 300px;
+    padding: 20px 50px;
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .app {
+    &__chart{
+      width: 300px;
+      flex-direction: column;
+      height: 400px;
+      padding: 0;
+    }
+
+    &__countries{
+      display: flex;
+      flex-direction: row;
+      height: 80px;
+      overflow: auto;
+      width: 290px;
+      margin-left: 5px;
+      margin-bottom: 5px;
+      justify-content: space-around;
+
+      &__country{
+        margin-left: 5px;
+        min-width: 100px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: 970px) {
+  .app{
+    &__content{
+      height: 1200px;
+    }
+  }
+}
+
+

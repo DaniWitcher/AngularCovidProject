@@ -1,42 +1,111 @@
-.app{
-    &__all-countries{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: rgb(227, 236, 212) ;
-        width: 200px;
-        height: 637px;
-        margin-top: 19px;
-        border: 1px solid rgb(23, 211, 16);
-        max-height: 637px;
-        overflow: auto;
-        margin-left: 25px;
+.app {
+  &__all-countries {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(227, 236, 212);
+    width: 200px;
+    height: 637px;
+    margin-top: 19px;
+    border: 1px solid rgb(23, 211, 16);
+    max-height: 637px;
+    overflow: auto;
+    margin-left: 25px;
+
+    &__main-text {
+      width: 70%;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    &__hl {
+      border-top: 1px solid rgb(23, 211, 16);
+      width: 150px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    &__country {
+      align-items: flex-start;
+      border: 1px dashed rgb(23, 211, 16);
+      display: block;
+      width: 150px;
+      cursor: pointer;
+    }
+  }
+}
+
+.color-red {
+  color: rgb(170, 73, 73);
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1819px) {
+  .app__all-countries {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 1288px) {
+  .app__all-countries {
+    flex-direction: row;
+    height: 120px;
+    width: 850px;
+    align-items: unset;
+    margin-left: 5px;
+    margin-top: 0;
+
+    &__country{
+        height: 70px;
+        margin-top: 25px;
+        min-width: 150px;
+    }
+
+    &__main-text {
+      margin-right: 10px;
+      min-width: 150px;
+      height: 50px;
+      margin-left: 5px;
+      margin-top: 35px;
+    }
+
+    &__hl {
+      display: none;
+    }
+
+    &__country {
+      margin-left: 2px;
+    }
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .app {
+    &__all-countries {
+      width: 540px;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+    .app{
+      &__all-countries{
+        width: 300px;
+        height: 100px;
 
         &__main-text{
-            width: 70%;
-            text-align: center;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        &__hl{
-            border-top: 1px solid rgb(23, 211, 16);
-            width: 150px;
-            margin-top: 10px;
-            margin-bottom: 5px;
+            font-size:10px;
+            margin-top: 25px;
+            min-width: 70px;
         }
 
         &__country{
-            align-items: flex-start;
-            border: 1px dashed rgb(23, 211, 16);
-            display: block;
-            width: 150px;
-            cursor: pointer;
+            font-size: 10px;
+            min-width: 70px;
+            height: 50px;
         }
+      }
     }
-}
-
-.color-red{
-    color:rgb(170, 73, 73);
-    font-weight: bold;
-} 
+  }
+  

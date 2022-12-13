@@ -2,6 +2,8 @@
   height: 675px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 
   &__block {
     display: flex;
@@ -24,7 +26,6 @@
       justify-content: space-around;
       padding: 20px;
       font-weight: bold;
-      
 
       &__text {
         font-size: 20px;
@@ -39,4 +40,106 @@
   font-size: 50px;
   letter-spacing: 3px;
   display: block;
+}
+
+@media only screen and (min-height: 970px) {
+  .app {
+    &__about {
+      height: 1200px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1745px) {
+  .app {
+    &__about {
+      &__block {
+        margin-left: 5px;
+        width: 400px;
+        &__inside {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1510px) {
+  .app {
+    &__about {
+      &__block {
+        &__inside {
+          width: 400px;
+          &__text {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  .did-you-know {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 1230px) {
+  .app {
+    &__about {
+      &__block {
+        width: 300px;
+        &__inside {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 910px) {
+  .app {
+    &__about {
+      flex-direction: column;
+      height: auto;
+      &__block {
+        width: 600px;
+        align-items: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        &__inside {
+          width: 600px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .app {
+    &__about {
+      &__block {
+        width: 400px;
+        &__inside {
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .app {
+    &__about {
+      &__block {
+        width: 300px;
+        &__inside {
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  .did-you-know {
+    font-size: 30px;
+  }
 }

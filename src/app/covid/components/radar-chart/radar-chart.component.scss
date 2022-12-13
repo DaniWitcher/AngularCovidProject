@@ -10,3 +10,12 @@
     width: 550px;
   }
 }
+
+@media only screen and (max-width: 870px) {
+  .app{
+    &__radar-chart{
+      width: 300px;
+      height: 300px;
+    }
+  }
+}

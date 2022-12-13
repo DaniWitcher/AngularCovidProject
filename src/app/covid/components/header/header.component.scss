@@ -43,3 +43,75 @@
 .active{
   color: black;
 }
+
+@media only screen and (max-width: 1310px) {
+  .app__header__main-text{
+    margin-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .app__header{
+    &__img{
+      margin-left: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .app {
+    &__header {
+      height: 80px;
+
+      &__img{
+        height: 50px;
+        width: 50px;
+      }
+
+      &__vl{
+        height: 50px;
+      }
+
+      &__main-text{
+        font-size: 10px;
+        margin-right: 10px;
+      }
+
+      &__link{
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .app{
+    &__header{
+      justify-content: space-around;
+
+     &__img{
+      display: none;
+     }
+     &__vl{
+      display: none;
+     }
+     &__main-text{
+      display: none;
+     }
+     &__link{
+      margin-left: 35px;
+     }
+    }
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .app{
+    &__header{
+      &__link{
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+    }
+  }
+}

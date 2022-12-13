@@ -35,17 +35,17 @@
       letter-spacing: 1px;
     }
 
-    &__hl{
-        border-top: 2px solid rgb(6, 17, 184);
-        margin-left: 250px;
-        margin-bottom: 10px;
-        margin-right: 250px;
+    &__hl {
+      border-top: 2px solid rgb(6, 17, 184);
+      margin-left: 250px;
+      margin-bottom: 10px;
+      margin-right: 250px;
     }
 
-    &__copyright{
-        margin-left: 250px;
-        letter-spacing: 1px;
-        font-weight: bold;
+    &__copyright {
+      margin-left: 250px;
+      letter-spacing: 1px;
+      font-weight: bold;
     }
   }
 }
@@ -53,4 +53,51 @@
 a:hover {
   color: yellow;
   transition: 0.7s;
+}
+
+@media only screen and (max-width: 1310px) {
+  .app__footer {
+    &__img {
+      margin-left: 20px;
+    }
+    &__hl {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    &__copyright {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .app {
+    &__footer {
+      height: 80px;
+      flex-direction: row;
+      align-items: center;
+
+      &__main-text {
+        margin-right: 20px;
+      }
+
+      &__hl {
+        display: none;
+      }
+
+      &__copyright {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .app {
+    &__footer {
+      &__copyright {
+        display: none;
+      }
+    }
+  }
 }

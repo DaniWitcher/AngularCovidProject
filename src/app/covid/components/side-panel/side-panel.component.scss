@@ -1,5 +1,5 @@
-.app{
-    &__side-panel{
+.app {
+  &__side-panel {
     display: flex;
     flex-direction: column;
     background-color: rgb(227, 236, 212);
@@ -11,50 +11,138 @@
     width: 700px;
     border: 1px solid rgb(23, 211, 16);
 
-    &__total-info{
+    &__total-info {
+      display: flex;
+      flex-direction: row;
+      height: 250px;
+      width: 650px;
+      margin-top: 10px;
+
+      &__info-bar {
         display: flex;
-        flex-direction: row;
-        height: 250px;
-        width: 650px;
-        margin-top: 10px;
-
-        &__info-bar{
-            display: flex;
-            flex-direction: column;
-            background-color: rgb(168, 228, 173);
-            border: 1px solid rgb(23, 211, 16);
-            height: 150px;
-            width: 270px;
-            margin-left: 35px;
-            margin-top: 40px;
-
-            &__text{
-                display: block;
-                font-weight: bold;
-                font-size: 25px;
-                text-align: center;
-                margin-top: 10px;
-                margin-bottom: 20px;
-                letter-spacing: 1px;
-            }
-
-            &__number{
-                display: block;
-                font-weight: bold;
-                text-align: center;
-                margin-top: 10px;
-                font-size: 40px;
-                color: rgb(170, 73, 73);
-            }
-        }
-    }
-
-    &__bar-chart{
+        flex-direction: column;
         background-color: rgb(168, 228, 173);
-        margin-left: 30px;
-        width: 600px;
-        margin-bottom: 10px;
         border: 1px solid rgb(23, 211, 16);
+        height: 150px;
+        width: 270px;
+        margin-left: 35px;
+        margin-top: 40px;
+
+        &__text {
+          display: block;
+          font-weight: bold;
+          font-size: 25px;
+          text-align: center;
+          margin-top: 10px;
+          margin-bottom: 20px;
+          letter-spacing: 1px;
+        }
+
+        &__number {
+          display: block;
+          font-weight: bold;
+          text-align: center;
+          margin-top: 10px;
+          font-size: 40px;
+          color: rgb(170, 73, 73);
+        }
+      }
     }
+
+    &__bar-chart {
+      background-color: rgb(168, 228, 173);
+      margin-left: 30px;
+      width: 600px;
+      margin-bottom: 10px;
+      border: 1px solid rgb(23, 211, 16);
     }
+  }
+}
+
+@media only screen and (max-width: 1819px) {
+  .app__side-panel {
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (max-width: 1680px) {
+  .app__side-panel {
+    padding: 0;
+    width: 300px;
+  }
+
+  .app__side-panel__bar-chart {
+    display: none;
+  }
+
+  .app__side-panel__total-info {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 615px;
+    width: 290px;
+    margin-left: 5px;
+
+    &__info-bar {
+      width: 220px;
+      margin-top: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 1288px) {
+  .app__side-panel {
+    width: 850px;
+    height: 170px;
+    margin-top: 0;
+
+    &__total-info {
+      flex-direction: row;
+      width: 850px;
+    }
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .app {
+    &__side-panel {
+      width: 540px;
+
+      &__total-info {
+        width: 520px;
+        padding: 0;
+
+        &__info-bar {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .app {
+    &__side-panel {
+      width: 300px;
+      height: 100px;
+
+      &__total-info {
+        width: 290px;
+        height: 90px;
+
+        &__info-bar {
+          width: 120px;
+          height: 80px;
+
+          &__text {
+            font-size: 15px;
+            margin-bottom: 0;
+          }
+
+          &__number {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
 }
